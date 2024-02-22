@@ -9,7 +9,7 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 
 
-class ContaoManagerPlugin implements BundlePluginInterface, RoutingPluginInterface
+class ContaoManagerPlugin implements BundlePluginInterface
 {
 	/**
 	 * {@inheritdoc}
