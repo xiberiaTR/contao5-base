@@ -37,6 +37,13 @@ $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 
 //$GLOBALS['FE_MOD']['Tabularasa']['Tabularasa-loader'] = loaderModule::class;
 
+if (!is_array($GLOBALS['TL_CTE']['Tickets'])) {
+    $GLOBALS['TL_CTE']['Tickets'] = array();
+}
+if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
+    $GLOBALS['BE_MOD']['groupe'] = array();
+}
+
 array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
     'ceBase' => ceBase::class,
     //'Biens'        => ceBien::class,
