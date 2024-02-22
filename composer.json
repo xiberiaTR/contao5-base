@@ -14,7 +14,7 @@
     "license": "Not free",
     "autoload": {
         "psr-4": {
-            "xiberiaTR\\ContaoBaseBundle\\": "src/"
+            "xiberiaTR\\ContaoAmaltisBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
