@@ -27,6 +27,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "trdev\\ContaoAmaltisBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "trdev\\ContaoAmaltisBundle\\ContaoManagerPlugin"
     }
 }
