@@ -2,10 +2,10 @@
 
 declare (strict_types = 1);
 
-namespace trdev\ContaoBaseBundle;
+namespace trdev\ContaoAmaltisBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoBaseBundle extends Bundle
+class ContaoAmaltisBundle extends Bundle
 {
 }
