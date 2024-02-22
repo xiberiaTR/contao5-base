@@ -10,27 +10,27 @@
  * @copyright Tabula Rasa
  */
 
-use trdev\ContaoBaseBundle\Element\ceBase;
-use trdev\ContaoBaseBundle\Module\beBaseModel;
+use trdev\ContaoAmaltisBundle\Element\ceBase;
+use trdev\ContaoAmaltisBundle\Module\beBaseModel;
 
 /**
  * Insert Tags
  */
-//use trdev\ContaoBaseBundle
+//use trdev\ContaoAmaltisBundle
 
-$GLOBALS['assetsFolder']['ContaoBaseBundle']    = "/bundles/contaobase/";
-$GLOBALS['bundleNamespace']['ContaoBaseBundle'] = "trdev\\ContaoBaseBundle\\";
+$GLOBALS['assetsFolder']['ContaoAmaltisBundle']    = "/bundles/contaobase/";
+$GLOBALS['bundleNamespace']['ContaoAmaltisBundle'] = "trdev\\ContaoAmaltisBundle\\";
 
-$helpers = $GLOBALS['assetsFolder']['ContaoBaseBundle'] . "helpers/";
+$helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 
 //$exp = new cocciExport();
 //$exp->exec();
 
-//$GLOBALS['TL_CSS'][] = $GLOBALS['assetsFolder']['ContaoBaseBundle'] . "css/be.css";
+//$GLOBALS['TL_CSS'][] = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "css/be.css";
 
-//$GLOBALS['TL_JAVASCRIPT'][] = $GLOBALS['assetsFolder']['ContaoBaseBundle'] . "js/full/be.js";
-//$GLOBALS['TL_JAVASCRIPT'][] = ($_ENV['APP_ENV'] == "dev") ? $GLOBALS['assetsFolder']['ContaoBaseBundle'] . 'js/full/chat.js' : $GLOBALS['assetsFolder']['ContaoBaseBundle'] . 'js/chat.min.js';
-//$GLOBALS['TL_JAVASCRIPT'][] = ($_ENV['APP_ENV'] == "dev") ? $GLOBALS['assetsFolder']['ContaoBaseBundle'] . 'js/full/tickets.js' : $GLOBALS['assetsFolder']['ContaoBaseBundle'] . 'js/tickets.min.js';
+//$GLOBALS['TL_JAVASCRIPT'][] = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "js/full/be.js";
+//$GLOBALS['TL_JAVASCRIPT'][] = ($_ENV['APP_ENV'] == "dev") ? $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . 'js/full/chat.js' : $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . 'js/chat.min.js';
+//$GLOBALS['TL_JAVASCRIPT'][] = ($_ENV['APP_ENV'] == "dev") ? $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . 'js/full/tickets.js' : $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . 'js/tickets.min.js';
 //
 //$GLOBALS['TL_HOOKS']['outputFrontendTemplate'][] = array(AjaxTickets::class, 'pageLoad');
 //$GLOBALS['TL_HOOKS']['processFormData'][]        = array(TicketsFormSubmit::class, 'saveSubmission');
