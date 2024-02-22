@@ -1,5 +1,5 @@
 {
-    "name": "tabularasadev/contao-base",
+    "name": "xiberiaTR/contao-amaltis",
     "description": "Module de Base",
     "type": "contao-bundle",
     "authors": [
@@ -9,8 +9,7 @@
         }
     ],
     "require": {
-        "contao/core-bundle": "^4.10 | ^4.12",
-        "twig/twig": "^3.3"
+        "contao/core-bundle": "^5.3"
     },
     "license": "Not free",
     "autoload": {
@@ -28,6 +27,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "trdev\\ContaoBaseBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "trdev\\ContaoAmaltisBundle\\ContaoManager\\Plugin"
     }
 }
