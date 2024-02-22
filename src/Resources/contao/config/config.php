@@ -18,7 +18,7 @@ use trdev\ContaoAmaltisBundle\Module\beBaseModel;
  */
 //use trdev\ContaoAmaltisBundle
 
-$GLOBALS['assetsFolder']['ContaoAmaltisBundle']    = "/bundles/contaobase/";
+$GLOBALS['assetsFolder']['ContaoAmaltisBundle']    = "/bundles/contaoamaltis/";
 $GLOBALS['bundleNamespace']['ContaoAmaltisBundle'] = "trdev\\ContaoAmaltisBundle\\";
 
 $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
