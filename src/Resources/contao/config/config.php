@@ -37,7 +37,7 @@ $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 
 //$GLOBALS['FE_MOD']['Tabularasa']['Tabularasa-loader'] = loaderModule::class;
 
-array_insert($GLOBALS['TL_CTE']['Tickets'], 1, array(
+array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
     'ceBase' => ceBase::class,
     //'Biens'        => ceBien::class,
     //'Pieces'       => cePiece::class,
@@ -50,12 +50,12 @@ array_insert($GLOBALS['TL_CTE']['Tickets'], 1, array(
 ));
 
 //Menu BE
-array_insert($GLOBALS['BE_MOD']['groupe'], 98, array(
+array_splice($GLOBALS['BE_MOD']['groupe'], 98, 0, array(
     'table' => array(
         'tables' => array('tl_base'),
     ),
-    'module'    => array(
-        'callback'         => beBaseModel::class,
+    'module' => array(
+        'callback' => beBaseModel::class,
         'hideInNavigation' => true,
     ),
 ));
