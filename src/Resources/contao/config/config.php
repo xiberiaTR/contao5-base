@@ -10,16 +10,16 @@
  * @copyright Tabula Rasa
  */
 
-use trdev\ContaoAmaltisBundle\Element\ceBase;
-use trdev\ContaoAmaltisBundle\Module\beBaseModel;
+use xiberiaTR\ContaoAmaltisBundle\Element\ceBase;
+use xiberiaTR\ContaoAmaltisBundle\Module\beBaseModel;
 
 /**
  * Insert Tags
  */
-//use trdev\ContaoAmaltisBundle
+//use xiberiaTR\ContaoAmaltisBundle
 
 $GLOBALS['assetsFolder']['ContaoAmaltisBundle']    = "/bundles/contaoamaltis/";
-$GLOBALS['bundleNamespace']['ContaoAmaltisBundle'] = "trdev\\ContaoAmaltisBundle\\";
+$GLOBALS['bundleNamespace']['ContaoAmaltisBundle'] = "xiberiaTR\\ContaoAmaltisBundle\\";
 
 $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 

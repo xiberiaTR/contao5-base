@@ -1,13 +1,13 @@
 <?php
 
-namespace trdev\ContaoBaseBundle\Element;
+namespace xiberiaTR\ContaoBaseBundle\Element;
 
 class ceBase extends \ContentElement
 {
     //Javascript et CSS additionnels a l'élément
     private $javascripts = [];
     private $styles = [];
-    
+
     protected $strTemplate = "ce_base";
 
     public function generate()

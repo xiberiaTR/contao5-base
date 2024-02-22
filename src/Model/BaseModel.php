@@ -1,6 +1,6 @@
 <?php
 
-namespace trdev\ContaoBaseBundle\Model;
+namespace xiberiaTR\ContaoBaseBundle\Model;
 
 class BaseModel extends \Model
 {

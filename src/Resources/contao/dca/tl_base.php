@@ -8,7 +8,7 @@
  * @copyright Tabula Rasa
  */
 
-use trdev\ContaoBaseBundle\Classes\TypeChamp;
+use xiberiaTR\ContaoBaseBundle\Classes\TypeChamp;
 
 $t = basename(__FILE__, '.php');
 
@@ -121,7 +121,7 @@ class tl_base extends Backend
             }
             return $varValue;
         }
-    
+
         public function editColumns($row, $label, DataContainer $dc, $args)
         {
             $args[0] = date('d/m/Y H:i', $args[0]);

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace trdev\ContaoAmaltisBundle;
+namespace xiberiaTR\ContaoAmaltisBundle;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;

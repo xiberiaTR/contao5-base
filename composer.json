@@ -14,7 +14,7 @@
     "license": "Not free",
     "autoload": {
         "psr-4": {
-            "trdev\\ContaoBaseBundle\\": "src/"
+            "xiberiaTR\\ContaoBaseBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
@@ -27,6 +27,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "trdev\\ContaoAmaltisBundle\\ContaoManagerPlugin"
+        "contao-manager-plugin": "xiberiaTR\\ContaoAmaltisBundle\\ContaoManagerPlugin"
     }
 }

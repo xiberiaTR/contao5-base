@@ -9,7 +9,7 @@
  * @copyright Tabula Rasa
  */
 
-namespace trdev\ContaoBaseBundle\Classes;
+namespace xiberiaTR\ContaoBaseBundle\Classes;
 
 class TypeChamp extends \Backend
 {
@@ -67,8 +67,8 @@ class TypeChamp extends \Backend
                 'tl_class'  => 'clr',
                 'mandatory' => $obligatoire,
             ),
-            'load_callback' => array(array('trdev\ContaoBaseBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
-            'save_callback' => array(array('trdev\ContaoBaseBundle\Classes\TypeChamp', 'convertRelativeLinks')),
+            'load_callback' => array(array('xiberiaTR\ContaoBaseBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
+            'save_callback' => array(array('xiberiaTR\ContaoBaseBundle\Classes\TypeChamp', 'convertRelativeLinks')),
             'sql'           => "mediumtext NULL",
         );
 
