@@ -16,7 +16,7 @@ use Contao\CoreBundle\Controller\BackendCsvImportController;
 
 
 // Back end modules
-$GLOBALS['BE_MOD']['content']['amaltis'] = array
+$GLOBALS['BE_MOD']['amaltis']['Tarifs'] = array
 (
 	'tables'      => array('tl_base'),
     'table'       => array(BackendCsvImportController::class, 'importTableWizardAction'),

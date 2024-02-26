@@ -106,8 +106,6 @@ $GLOBALS['TL_DCA'][$t] = array(
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ),
         'message'     => TypeChamp::textarea(true),
-        'membre'      => TypeChamp::selectTable('tl_member.username', false, true),
-        'utilisateur' => TypeChamp::selectTable('tl_user.username', false, true),
     ),
 );
 
