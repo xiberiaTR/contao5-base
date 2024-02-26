@@ -11,7 +11,7 @@
 
 namespace xiberiaTR\ContaoBaseBundle\Classes;
 
-class TypeChamp extends \Backend
+class TypeChamp extends \Backenda
 {
     #region Texte
     /**
