@@ -67,9 +67,8 @@ class TypeChamp extends Backend
             'eval'          => array(
                 'tl_class'  => 'clr',
                 'mandatory' => $obligatoire,
+                'basicEntities' => true,
             ),
-            'load_callback' => array(array('xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
-            'save_callback' => array(array('xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp', 'convertRelativeLinks')),
             'sql'           => "mediumtext NULL",
         );
 
