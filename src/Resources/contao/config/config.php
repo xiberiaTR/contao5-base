@@ -40,9 +40,9 @@ $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 // if (!is_array($GLOBALS['TL_CTE']['Tickets'])) {
 //     $GLOBALS['TL_CTE']['Tickets'] = array();
 // }
-// if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
-//     $GLOBALS['BE_MOD']['groupe'] = array();
-// }
+if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
+    $GLOBALS['BE_MOD']['groupe'] = array();
+}
 
 // array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
 //     'ceBase' => ceBase::class,
