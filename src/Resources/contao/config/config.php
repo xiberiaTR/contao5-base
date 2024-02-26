@@ -13,6 +13,13 @@
 use xiberiaTR\ContaoAmaltisBundle\Element\ceBase;
 use xiberiaTR\ContaoAmaltisBundle\Module\beBaseModel;
 
+
+// Back end modules
+$GLOBALS['BE_MOD']['content']['amaltis'] = array
+(
+	'tables'      => array('tl_base')
+);
+
 /**
  * Insert Tags
  */
@@ -40,9 +47,9 @@ $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 // if (!is_array($GLOBALS['TL_CTE']['Tickets'])) {
 //     $GLOBALS['TL_CTE']['Tickets'] = array();
 // }
-if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
-    $GLOBALS['BE_MOD']['groupe'] = array();
-}
+// if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
+//     $GLOBALS['BE_MOD']['groupe'] = array();
+// }
 
 // array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
 //     'ceBase' => ceBase::class,
@@ -57,12 +64,12 @@ if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
 // ));
 
 //Menu BE
-array_splice($GLOBALS['BE_MOD']['groupe'], 98, 0, array(
-    'table' => array(
-        'tables' => array('tl_base'),
-    ),
-    // 'module' => array(
-    //     'callback' => beBaseModel::class,
-    //     'hideInNavigation' => true,
-    // ),
-));
+// array_splice($GLOBALS['BE_MOD']['groupe'], 98, 0, array(
+//     'table' => array(
+//         'tables' => array('tl_base'),
+//     ),
+//     'module' => array(
+//         'callback' => beBaseModel::class,
+//         'hideInNavigation' => true,
+//     ),
+// ));
