@@ -37,32 +37,32 @@ $helpers = $GLOBALS['assetsFolder']['ContaoAmaltisBundle'] . "helpers/";
 
 //$GLOBALS['FE_MOD']['Tabularasa']['Tabularasa-loader'] = loaderModule::class;
 
-if (!is_array($GLOBALS['TL_CTE']['Tickets'])) {
-    $GLOBALS['TL_CTE']['Tickets'] = array();
-}
-if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
-    $GLOBALS['BE_MOD']['groupe'] = array();
-}
+// if (!is_array($GLOBALS['TL_CTE']['Tickets'])) {
+//     $GLOBALS['TL_CTE']['Tickets'] = array();
+// }
+// if (!is_array($GLOBALS['BE_MOD']['groupe'])) {
+//     $GLOBALS['BE_MOD']['groupe'] = array();
+// }
 
-array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
-    'ceBase' => ceBase::class,
-    //'Biens'        => ceBien::class,
-    //'Pieces'       => cePiece::class,
-    //'Liens'        => ceLien::class,
-    //'Mandats'      => ceMandat::class,
-    //'Recherche'    => ceRechercheBien::class,
-    //'FicheVitrine' => ceFicheVitrine::class,
-    //'Impression'   => ceImpression::class,
-    //'BonVisite'    => ceBonVisite::class,
-));
+// array_splice($GLOBALS['TL_CTE']['Tickets'], 1, 0, array(
+//     'ceBase' => ceBase::class,
+//     'Biens'        => ceBien::class,
+//     'Pieces'       => cePiece::class,
+//     'Liens'        => ceLien::class,
+//     'Mandats'      => ceMandat::class,
+//     'Recherche'    => ceRechercheBien::class,
+//     'FicheVitrine' => ceFicheVitrine::class,
+//     'Impression'   => ceImpression::class,
+//     'BonVisite'    => ceBonVisite::class,
+// ));
 
 //Menu BE
 array_splice($GLOBALS['BE_MOD']['groupe'], 98, 0, array(
     'table' => array(
         'tables' => array('tl_base'),
     ),
-    'module' => array(
-        'callback' => beBaseModel::class,
-        'hideInNavigation' => true,
-    ),
+    // 'module' => array(
+    //     'callback' => beBaseModel::class,
+    //     'hideInNavigation' => true,
+    // ),
 ));
