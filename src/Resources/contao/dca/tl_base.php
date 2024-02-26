@@ -111,6 +111,8 @@ $GLOBALS['TL_DCA'][$t] = array(
     ),
 );
 
+use Contao\Backend;
+
 class tl_base extends Backend
 {
     /*
