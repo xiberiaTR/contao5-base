@@ -17,13 +17,13 @@
             "xiberiaTR\\ContaoAmaltisBundle\\": "src/"
         },
         "classmap": [
-            "src/Resources/contao/"
+            "src/contao/"
         ],
         "exclude-from-classmap": [
-            "src/Resources/contao/config/",
-            "src/Resources/contao/dca/",
-            "src/Resources/contao/languages/",
-            "src/Resources/contao/templates/"
+            "src/contao/config/",
+            "src/contao/dca/",
+            "src/contao/languages/",
+            "src/contao/templates/"
         ]
     },
     "extra": {
