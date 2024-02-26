@@ -9,6 +9,8 @@
  */
 
 use xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp;
+use Contao\DC_Table;
+
 
 $t = basename(__FILE__, '.php');
 
@@ -19,7 +21,7 @@ $GLOBALS['TL_DCA'][$t] = array(
 
     // Config
     'config'      => array(
-        'dataContainer'    => 'Table',
+        'dataContainer'    => DC_Table::class,
         'enableVersioning' => false, //True si tu veux du versionning
         'sql'              => array(
             'keys' => array(
