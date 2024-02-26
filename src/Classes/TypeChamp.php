@@ -10,8 +10,9 @@
  */
 
 namespace xiberiaTR\ContaoAmaltisBundle\Classes;
+use Contao\Backend;
 
-class TypeChamp extends \Backend
+class TypeChamp extends Backend
 {
     #region Texte
     /**
