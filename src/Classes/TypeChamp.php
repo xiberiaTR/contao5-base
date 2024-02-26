@@ -9,7 +9,7 @@
  * @copyright Tabula Rasa
  */
 
-namespace xiberiaTR\ContaoBaseBundle\Classes;
+namespace xiberiaTR\ContaoAmaltisBundle\Classes;
 
 class TypeChamp extends \Backend
 {
