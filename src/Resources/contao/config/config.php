@@ -12,12 +12,15 @@
 
 use xiberiaTR\ContaoAmaltisBundle\Element\ceBase;
 use xiberiaTR\ContaoAmaltisBundle\Module\beBaseModel;
+use Contao\CoreBundle\Controller\BackendCsvImportController;
 
 
 // Back end modules
 $GLOBALS['BE_MOD']['content']['amaltis'] = array
 (
-	'tables'      => array('tl_base')
+	'tables'      => array('tl_base'),
+    'table'       => array(BackendCsvImportController::class, 'importTableWizardAction'),
+	'list'        => array(BackendCsvImportController::class, 'importListWizardAction')
 );
 
 /**
