@@ -1,6 +1,6 @@
 <?php
 
-namespace xiberiaTR\ContaoBaseBundle\Element;
+namespace xiberiaTR\ContaoAmaltisBundle\Element;
 
 class ceBase extends \ContentElement
 {

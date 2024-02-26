@@ -1,6 +1,6 @@
 <?php
 
-namespace xiberiaTR\ContaoBaseBundle\Model;
+namespace xiberiaTR\ContaoAmaltisBundle\Model;
 
 class BaseModel extends \Model
 {

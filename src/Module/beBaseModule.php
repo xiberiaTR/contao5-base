@@ -1,9 +1,9 @@
 <?php
 
-namespace xiberiaTR\ContaoBaseBundle\Module;
+namespace xiberiaTR\ContaoAmaltisBundle\Module;
 
-use xiberiaTR\ContaoBaseBundle\Model\MessageModel;
-use xiberiaTR\ContaoBaseBundle\Model\TicketModel;
+use xiberiaTR\ContaoAmaltisBundle\Model\MessageModel;
+use xiberiaTR\ContaoAmaltisBundle\Model\TicketModel;
 
 class beBaseModule extends \BackendModule
 {

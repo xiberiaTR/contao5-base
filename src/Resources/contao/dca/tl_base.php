@@ -8,7 +8,7 @@
  * @copyright Tabula Rasa
  */
 
-use xiberiaTR\ContaoBaseBundle\Classes\TypeChamp;
+use xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp;
 
 $t = basename(__FILE__, '.php');
 

@@ -67,8 +67,8 @@ class TypeChamp extends \Backend
                 'tl_class'  => 'clr',
                 'mandatory' => $obligatoire,
             ),
-            'load_callback' => array(array('xiberiaTR\ContaoBaseBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
-            'save_callback' => array(array('xiberiaTR\ContaoBaseBundle\Classes\TypeChamp', 'convertRelativeLinks')),
+            'load_callback' => array(array('xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
+            'save_callback' => array(array('xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp', 'convertRelativeLinks')),
             'sql'           => "mediumtext NULL",
         );
 
@@ -482,7 +482,7 @@ class TypeChamp extends \Backend
 
     public static function printIcon($fichier)
     {
-        return sprintf('%simg/%s', $GLOBALS['assetsFolder']['ContaoBaseBundle'], $fichier);
+        return sprintf('%simg/%s', $GLOBALS['assetsFolder']['ContaoAmaltisBundle'], $fichier);
     }
 
     public function convertAbsoluteLinks($strContent)
