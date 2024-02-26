@@ -10,6 +10,13 @@
 
 use xiberiaTR\ContaoAmaltisBundle\Classes\TypeChamp;
 use Contao\DC_Table;
+use Contao\System;
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Contao\StringUtil;
+use Contao\Image;
+use Contao\Backend;
+
+
 
 
 $t = basename(__FILE__, '.php');
@@ -67,6 +74,12 @@ $GLOBALS['TL_DCA'][$t] = array(
                 'icon'       => 'delete.gif',
                 'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"',
             ),
+            'toggle' => array
+			(
+				'href'                => 'act=toggle&amp;field=published',
+				'icon'                => 'visible.svg',
+				'button_callback'     => array('tl_base', 'toggleIcon')
+			),
             'show'   => array(
                 'label' => &$GLOBALS['TL_LANG'][$t]['show'],
                 'href'  => 'act=show',
@@ -88,7 +101,7 @@ $GLOBALS['TL_DCA'][$t] = array(
     // Palettes
     'palettes'    => array(
         '__selector__' => array(''),
-        'default'      => 'name',
+        'default'      => 'name,published,bio,produitPhare,description'
     ),
 
     // Subpalettes
@@ -104,31 +117,48 @@ $GLOBALS['TL_DCA'][$t] = array(
         'tstamp'      => array(
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ),
-        'pid'         => array(
-            'sql' => "int(10) unsigned NOT NULL default '0'",
-        ),
-        'message'     => TypeChamp::textarea(true),
+        'name' => TypeChamp::text(true),
+        'published' => TypeChamp::ouiNon(),
+        'bio' => TypeChamp::ouiNon(),
+        'produitPhare' => TypeChamp::ouiNon(),
+        'description'     => TypeChamp::textarea(true),
     ),
 );
 
-use Contao\Backend;
 
 class tl_base extends Backend
 {
-    /*
-     public function generateAlias($varValue, DataContainer $dc)
-        {
-            if ($varValue == '') {
-                $varValue = BaseModel::getNewAlias();
-            }
-            return $varValue;
+/**
+	 * Return the "toggle visibility" button
+	 *
+	 * @param array  $row
+	 * @param string $href
+	 * @param string $label
+	 * @param string $title
+	 * @param string $icon
+	 * @param string $attributes
+	 *
+	 * @return string
+	 */
+    public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
+    {
+        // Permission check example (adapt based on your actual permission system)
+        if (!System::getContainer()->get('security.helper')->isGranted(ContaoCorePermissions::USER_CAN_EDIT_FIELD_OF_TABLE, 'tl_base::published')) {
+            return '';
         }
+    
+        $href .= '&amp;id=' . $row['id'];
+    
+        // Toggle icon based on the published state
+        if (!$row['published']) {
+            $icon = 'invisible.svg';
+        } else {
+            $icon = 'visible.svg'; // Ensure you have a 'visible.svg' icon
+        }
+    
+        $titleDisabled = (is_array($GLOBALS['TL_DCA']['tl_base']['list']['operations']['toggle']['label']) && isset($GLOBALS['TL_DCA']['tl_comments']['list']['operations']['toggle']['label'][2])) ? sprintf($GLOBALS['TL_DCA']['tl_comments']['list']['operations']['toggle']['label'][2], $row['id']) : $title;
 
-        public function editColumns($row, $label, DataContainer $dc, $args)
-        {
-            $args[0] = date('d/m/Y H:i', $args[0]);
-            $args[6] = FonctionsBlandin::printPrice($args[6]);
-            return $args;
-        }
-    */
+		return '<a href="' . $this->addToUrl($href) . '" title="' . StringUtil::specialchars($row['published'] ? $title : $titleDisabled) . '" data-title="' . StringUtil::specialchars($title) . '" data-title-disabled="' . StringUtil::specialchars($titleDisabled) . '" data-action="contao--scroll-offset#store" onclick="return AjaxRequest.toggleField(this,true)">' . Image::getHtml($icon, $label, 'data-icon="visible.svg" data-icon-disabled="invisible.svg" data-state="' . ($row['published'] ? 1 : 0) . '"') . '</a> ';
+    }
+
 }
