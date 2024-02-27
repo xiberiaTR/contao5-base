@@ -41,9 +41,10 @@ $GLOBALS['TL_DCA'][$t] = array(
     'list'        => array(
         'sorting'           => array(
             'mode'        => 1,
-            'fields'      => array('tstamp'),
+            'fields'      => array('name'),
             'panelLayout' => 'filter;sort,search,limit',
-            'flag'        => 12, //https://docs.contao.org/dev/reference/dca/fields/#reference
+            'flag'        => 11, //https://docs.contao.org/dev/reference/dca/fields/#reference
+            'disableGrouping' => true,
         ),
         'label'             => array(
             'fields'      => array('name'),
@@ -74,12 +75,11 @@ $GLOBALS['TL_DCA'][$t] = array(
                 'icon'       => 'delete.gif',
                 'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"',
             ),
-            'toggle' => array
-			(
-				'href'                => 'act=toggle&amp;field=published',
-				'icon'                => 'visible.svg',
-				'button_callback'     => array('tl_base', 'toggleIcon')
-			),
+            'toggle' => array(
+                'href'                => 'act=toggle&amp;field=published',
+                'icon'                => 'visible.svg',
+                'button_callback'     => array('tl_base', 'toggleIcon')
+            ),
             'show'   => array(
                 'label' => &$GLOBALS['TL_LANG'][$t]['show'],
                 'href'  => 'act=show',
@@ -118,7 +118,15 @@ $GLOBALS['TL_DCA'][$t] = array(
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ),
         'name' => TypeChamp::text(true),
-        'published' => TypeChamp::ouiNon(),
+        'published' => array
+		(
+			'toggle'                  => true,
+			'filter'                  => true,
+			'sorting'                 => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('doNotCopy'=>true),
+            'sql'                     => array('type' => 'boolean', 'default' => false)
+        ),
         'bio' => TypeChamp::ouiNon(),
         'produitPhare' => TypeChamp::ouiNon(),
         'description'     => TypeChamp::textarea(true),
@@ -128,37 +136,36 @@ $GLOBALS['TL_DCA'][$t] = array(
 
 class tl_base extends Backend
 {
-/**
-	 * Return the "toggle visibility" button
-	 *
-	 * @param array  $row
-	 * @param string $href
-	 * @param string $label
-	 * @param string $title
-	 * @param string $icon
-	 * @param string $attributes
-	 *
-	 * @return string
-	 */
+    /**
+     * Return the "toggle visibility" button
+     *
+     * @param array  $row
+     * @param string $href
+     * @param string $label
+     * @param string $title
+     * @param string $icon
+     * @param string $attributes
+     *
+     * @return string
+     */
     public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
     {
         // Permission check example (adapt based on your actual permission system)
         if (!System::getContainer()->get('security.helper')->isGranted(ContaoCorePermissions::USER_CAN_EDIT_FIELD_OF_TABLE, 'tl_base::published')) {
             return '';
         }
-    
+
         $href .= '&amp;id=' . $row['id'];
-    
+
         // Toggle icon based on the published state
         if (!$row['published']) {
             $icon = 'invisible.svg';
         } else {
             $icon = 'visible.svg'; // Ensure you have a 'visible.svg' icon
         }
-    
+
         $titleDisabled = (is_array($GLOBALS['TL_DCA']['tl_base']['list']['operations']['toggle']['label']) && isset($GLOBALS['TL_DCA']['tl_comments']['list']['operations']['toggle']['label'][2])) ? sprintf($GLOBALS['TL_DCA']['tl_comments']['list']['operations']['toggle']['label'][2], $row['id']) : $title;
 
-		return '<a href="' . $this->addToUrl($href) . '" title="' . StringUtil::specialchars($row['published'] ? $title : $titleDisabled) . '" data-title="' . StringUtil::specialchars($title) . '" data-title-disabled="' . StringUtil::specialchars($titleDisabled) . '" data-action="contao--scroll-offset#store" onclick="return AjaxRequest.toggleField(this,true)">' . Image::getHtml($icon, $label, 'data-icon="visible.svg" data-icon-disabled="invisible.svg" data-state="' . ($row['published'] ? 1 : 0) . '"') . '</a> ';
+        return '<a href="' . $this->addToUrl($href) . '" title="' . StringUtil::specialchars($row['published'] ? $title : $titleDisabled) . '" data-title="' . StringUtil::specialchars($title) . '" data-title-disabled="' . StringUtil::specialchars($titleDisabled) . '" data-action="contao--scroll-offset#store" onclick="return AjaxRequest.toggleField(this,true)">' . Image::getHtml($icon, $label, 'data-icon="visible.svg" data-icon-disabled="invisible.svg" data-state="' . ($row['published'] ? 1 : 0) . '"') . '</a> ';
     }
-
 }
